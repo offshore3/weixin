@@ -6,15 +6,22 @@
     </view>
     <view class="sender-info">
       <view>{{name}} {{phoneNumber}}</view>
-      <view>寄件2</view>
+      <view>{{senderAddress}}</view>
     </view>
     <view class="sender-address-manager">
       <text>地址簿</text>     
     </view>
   </view>
   <view class="recipient">
-    <text>
-    ddd
-    </text>
+     <view class="sender-img">
+      <text>收</text>
+    </view>
+    <view class="sender-info">
+      <view>{{name}} {{phoneNumber}}</view>
+      <view>{{senderAddress}}</view>
+    </view>
+    <view class="sender-address-manager">
+      <text>地址簿</text>     
+    </view>
   </view>
 </view>

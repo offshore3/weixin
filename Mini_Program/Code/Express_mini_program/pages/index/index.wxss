@@ -1,33 +1,34 @@
 /**index.wxss**/
-.sender{
+
+.sender {
   background-color: white;
   height: 100rpx;
   display: flex;
   padding-left: 10rpx;
 }
-.sender-img{
+
+.sender-img {
   width: 10%;
 }
-.sender-info{
+
+.sender-info {
   display: flex;
   margin-left: 10rpx;
   flex-direction: column;
-  justify-items:flex-start;
+  justify-items: flex-start;
   width: 70%;
 }
-.sender-address-manager{
-  border-left-width: 2rpx;
-  border-left-color:red;
-}
 
-.sender-info .item{
-  
+.sender-address-manager {
+  border-left-width: 2rpx;
+  border-left-color: red;
 }
 
 .recipient {
-  height: auto;
-  overflow: hidden;
-  background: #fff;
-  color: #333;
-  margin-top: 10rpx;
+  background-color: white;
+  height: 100rpx;
+  display: flex;
+  padding-left: 10rpx;
+  margin-top: 20rpx;
 }
+

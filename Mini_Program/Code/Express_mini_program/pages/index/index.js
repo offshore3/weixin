@@ -6,7 +6,7 @@ Page({
   data: {
    name:'刁佳',
    phoneNumber:'15902221234',
-   defaultSenderAddress:'',   
+   senderAddress:'陕西省西安市雁塔区 科技三路57号',   
   },
   
   onLoad: function () {
