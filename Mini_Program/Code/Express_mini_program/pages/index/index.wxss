@@ -1,21 +1,22 @@
 /**index.wxss**/
-.userinfo {
+.sender{
+  background-color: white;
+  height: 100rpx;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+}
+.sender-info{
+  display: flex;
+  margin-left: 10rpx;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.sender-info .item{
+  
 }
 
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
+.recipient {
+  height: auto;
+  overflow: hidden;
+  background: #fff;
+  color: #333;
+  margin-top: 10rpx;
 }

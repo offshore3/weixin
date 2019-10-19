@@ -1,0 +1,5 @@
+<!--pages/query/query.wxml-->
+<view>
+  <text>查快递</text>
+</view>
+
