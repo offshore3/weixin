@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/query/query",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/address/address-list"
   ],
   "window": {
     "backgroundTextStyle": "light",

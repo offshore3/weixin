@@ -16,7 +16,6 @@
   width: 70%;
 }
 .sender-address-manager{
-  width: 20%;
   border-left-width: 2rpx;
   border-left-color:red;
 }
