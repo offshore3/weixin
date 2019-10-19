@@ -3,10 +3,22 @@
   background-color: white;
   height: 100rpx;
   display: flex;
+  padding-left: 10rpx;
+}
+.sender-img{
+  width: 10%;
 }
 .sender-info{
   display: flex;
   margin-left: 10rpx;
+  flex-direction: column;
+  justify-items:flex-start;
+  width: 70%;
+}
+.sender-address-manager{
+  width: 20%;
+  border-left-width: 2rpx;
+  border-left-color:red;
 }
 
 .sender-info .item{

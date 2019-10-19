@@ -4,7 +4,9 @@ const app = getApp()
 
 Page({
   data: {
-   
+   name:'刁佳',
+   phoneNumber:'15902221234',
+   defaultSenderAddress:'',   
   },
   
   onLoad: function () {

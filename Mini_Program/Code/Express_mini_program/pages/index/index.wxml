@@ -5,12 +5,11 @@
       <text>寄</text>
     </view>
     <view class="sender-info">
-      <text>寄件</text>
-      <text>寄件</text>
+      <view>{{name}} {{phoneNumber}}</view>
+      <view>寄件2</view>
     </view>
     <view class="sender-address-manager">
-      <text>寄件</text>
-      <text>寄件</text>
+      <text>地址簿</text>     
     </view>
   </view>
   <view class="recipient">
