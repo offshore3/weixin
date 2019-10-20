@@ -1,4 +1,29 @@
 <!--pages/my/my.wxml-->
-<view>
-  <text>我的</text>
+<view class="container">
+  <view class="page-body">
+    <view class="page-section" style="margin-bottom: 20px;">
+      <image style="width: 50px; height: 50px; border-radius:30px;" src="{{src}}"></image>
+      <text>刘**</text>
+      <text>1589170****</text>
+    </view>
+    <view class="page-section">      
+      <text>我的订单</text>
+      <text style="float:right">查看全部</text>
+      <view class="divLine"></view>
+    </view>    
+    <view class="page-section" style="margin-bottom: 30px;">      
+      <button type="default" size="mini"> 待审核 </button>
+      <button type="default" size="mini"> 无流转 </button>
+      <button type="default" size="mini"> 流转中 </button>
+      <button type="default" size="mini"> 已签收 </button>
+      <button type="default" size="mini"> 已取消 </button>      
+    </view>
+    <view class="page-section">      
+      <text>收件人地址</text>
+      <view class="divLine"></view>
+      <text>我的地址</text>
+      <view class="divLine"></view>
+      <text>我的优惠券</text>
+    </view>
+  </view>
 </view>

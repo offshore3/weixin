@@ -1,1 +1,7 @@
 /* pages/my/my.wxss */
+button {margin: 5px;}
+.page-section{
+    padding-left: 15px;
+    padding-right: 15px;
+    background: white;
+}
