@@ -4,16 +4,22 @@
     <view class="sender-img">
       <text>寄</text>
     </view>
-    <view class="sender-info">
+    <view class="sender-info" wx:if="{{hasSenderInfo}}">
       <view>{{name}} {{phoneNumber}}</view>
       <view>{{senderAddress}}</view>
     </view>
+    <view class="default-sender-msg" bindtap="selectSenderAction" wx:else>
+      <navigator url="../address/address-list">
+        <view class="info">寄件人信息</view>
+        <view class="address">点击添加寄件地址</view>
+      </navigator>
+    </view>
     <view class="sender-address-manager">
-      <text>地址簿</text>     
+      <text>地址簿</text>
     </view>
   </view>
   <view class="recipient">
-     <view class="sender-img">
+    <view class="recipient-img">
       <text>收</text>
     </view>
     <view class="sender-info">
@@ -21,7 +27,13 @@
       <view>{{senderAddress}}</view>
     </view>
     <view class="sender-address-manager">
-      <text>地址簿</text>     
+      <text>地址簿</text>
     </view>
+  </view>
+  <view class="submit">
+    <label class="checkbox">
+      <checkbox />我同意
+    </label>
+    <label class="term">{{'《'}}快递运单契约条款{{'》'}}</label>
   </view>
 </view>

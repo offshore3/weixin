@@ -2,13 +2,32 @@
 
 .sender {
   background-color: white;
-  height: 100rpx;
+  height: 120rpx;
   display: flex;
   padding-left: 10rpx;
 }
 
-.sender-img {
+.sender-img,.recipient-img {
   width: 10%;
+  margin-top:20rpx;
+  margin-left: 10rpx;
+}
+
+.default-sender-msg, .sender-info {
+  display: flex;
+  margin-left: 10rpx;
+  flex-direction: column;
+  justify-items: flex-start;
+  width: 70%;
+}
+
+.default-sender-msg .info{
+ font-size: 16px;
+ color: black;
+}
+
+.default-sender-msg .address{
+  color: gray;
 }
 
 .sender-info {
@@ -26,9 +45,21 @@
 
 .recipient {
   background-color: white;
-  height: 100rpx;
+  height: 120rpx;
   display: flex;
   padding-left: 10rpx;
   margin-top: 20rpx;
+  padding-top: 10rpx;
+}
+
+.submit{
+  position: fixed;
+  bottom: 0;
+  height: 80rpx;
+  margin-left: 10rpx;
+}
+
+.term{
+  color: #0099ff;
 }
 

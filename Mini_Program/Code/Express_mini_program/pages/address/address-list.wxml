@@ -1,2 +1,7 @@
 <!--pages/address/address-list.wxml-->
-<text>pages/address/address-list.wxml</text>
+<view class="container">
+ <view class="search">
+   
+  </view>
+</view>
+
