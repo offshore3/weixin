@@ -1,4 +1,7 @@
 /**app.wxss**/
+@import "./fontawesome/fontawesome.wxss";
+@import "./fontawesome/solid.wxss";
+
 .container {
   box-sizing: border-box;
   background-color: #f4f4f4;
