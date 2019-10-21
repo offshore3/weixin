@@ -5,25 +5,34 @@
       <image style="width: 50px; height: 50px; border-radius:30px;" src="{{src}}"></image>
       <text>刘**</text>
       <text>1589170****</text>
+      <i class="fa fa-address-card" style="float:right;line-height:50px;">已实名</i> 
     </view>
-    <view class="page-section">      
+    <view class="page-section" style="padding-top: 10px;">      
       <text>我的订单</text>
       <text style="float:right">查看全部</text>
+      &gt;
       <view class="divLine"></view>
     </view>    
-    <view class="page-section" style="margin-bottom: 30px;">      
+    <view class="page-section" style="margin-bottom: 20px;">      
       <button type="default" size="mini"> 待审核 </button>
       <button type="default" size="mini"> 无流转 </button>
       <button type="default" size="mini"> 流转中 </button>
       <button type="default" size="mini"> 已签收 </button>
       <button type="default" size="mini"> 已取消 </button>      
     </view>
-    <view class="page-section">      
-      <text>收件人地址</text>
+    <view class="page-section" style="padding-top: 10px;">      
+      <view>
+        <text>收件人地址</text>
+      </view>      
       <view class="divLine"></view>
-      <text>我的地址</text>
+      <view style="margin-top: 5px;">
+        <text>我的地址</text>
+      </view>
       <view class="divLine"></view>
-      <text>我的优惠券</text>
+      <view style="margin-top: 5px;">
+        <text>我的优惠券</text>
+        <text class="fas fa-question"></text>  
+      </view>
     </view>
   </view>
 </view>
