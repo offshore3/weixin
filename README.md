@@ -5,5 +5,5 @@ https://trello.com/b/dtAcLf5k/we-chat
 https://github.com/offshore3/weixin/wiki
 
 ### MiniApi
-#### ConnectionStrings is in the file "appsettings.json"
-`MysqlConnection£ºServer=localhost;Database=MiniDb;User=root;Password=;pooling=true;port=3306;sslmode=none;CharSet=utf8;`
+#### The ConnectionStrings of MySql is in the file "appsettings.json"
+`MysqlConnection: Server=localhost;Database=MiniDb;User=root;Password=;pooling=true;port=3306;sslmode=none;CharSet=utf8;`
