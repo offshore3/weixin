@@ -1,0 +1,16 @@
+[Dd]ebug/
+[Oo]bj/
+[Bb]in/
+packages/
+/Output/
+*.suo
+*.user
+Src/Zion/OPCAgentSetup/OPCAgentSetup/Express/
+Src/Zion/Zion.SchedulerServiceSetup/Zion.SchedulerServiceSetup/Express/
+Src/Zion/Zion.Web/Uploads
+/Src/Zion/Zion.Web/www
+/Src/Zion/Zion.App/bld/
+/Src/Zion/Zion.sln.GhostDoc.xml
+Src/Zion/.vs/config/applicationhost.config
+Src/Zion/.vs
+*.scgdat

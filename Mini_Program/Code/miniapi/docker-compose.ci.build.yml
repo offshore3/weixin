@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+  ci-build:
+    image: appsvc/dotnetcore
+    volumes:
+      - .:/src
+    working_dir: /src
+    command: /bin/bash -c "dotnet restore ./miniapi.sln && dotnet publish ./miniapi.sln -c Release -o ./obj/Docker/publish"
