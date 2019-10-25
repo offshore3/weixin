@@ -5,8 +5,8 @@
       <text>寄</text>
     </view>
     <view class="sender-info" wx:if="{{hasSenderInfo}}">
-      <view>{{name}} {{phoneNumber}}</view>
-      <view>{{senderAddress}}</view>
+      <view>{{senderInfo.name}} {{senderInfo.phoneNumber}}</view>
+      <view>{{senderInfo.address}}</view>
     </view>
     <view class="default-sender-msg" bindtap="selectSenderAction" wx:else>
       <navigator url="../address/address-list">
@@ -14,7 +14,7 @@
         <view class="address">点击添加寄件地址</view>
       </navigator>
     </view>
-    <view class="sender-address-manager">
+    <view class="sender-address-manager" bindtap="selectSenderInfo">
       <text>地址簿</text>
     </view>
   </view>
@@ -23,10 +23,10 @@
       <text>收</text>
     </view>
     <view class="sender-info">
-      <view>{{name}} {{phoneNumber}}</view>
-      <view>{{senderAddress}}</view>
+      <view>{{recipientInfo.name}} {{recipientInfo.phoneNumber}}</view>
+      <view>{{recipientInfo.address}}</view>
     </view>
-    <view class="sender-address-manager">
+    <view class="sender-address-manager" bindtap="selectRecipientInfo">
       <text>地址簿</text>
     </view>
   </view>

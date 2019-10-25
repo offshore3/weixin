@@ -4,16 +4,28 @@ const app = getApp()
 
 Page({
   data: {
-    name: '刁佳',
-    phoneNumber: '15902221234',
-    senderAddress: '陕西省西安市雁塔区 科技三路57号',
-    hasSenderInfo: false,
+    senderInfo: { name: '刁佳', phoneNumber: "15902221234", address: "陕西省 西安市高新区"},
+    recipientInfo:{},
+
+    hasSenderInfo: true,
     hasRecipientInfo: false
   },
 
   onLoad: function() {
     wx.setNavigationBarTitle({
       title: '寄件'
+    })
+  },
+
+  selectSenderInfo:function(){
+    wx.navigateTo({
+      url: '../address/address-list?type=1',
+    })
+  },
+
+  selectRecipientInfo: function () {
+    wx.navigateTo({
+      url: '../address/address-list?type=2',
     })
   }
 })

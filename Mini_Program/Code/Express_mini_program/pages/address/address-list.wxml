@@ -1,7 +1,17 @@
 <!--pages/address/address-list.wxml-->
 <view class="container">
- <view class="search">
-   
-  </view>
+  <!-- <view class="search">
+   Search
+  </view> -->
+
+  <scroll-view scroll-y="true" style='height:1200rpx;' bindscroll="scroll">
+    <view class='content-list' wx:for="{{addresses}}" wx:key="unique" wx:for-index="indexs">
+      <view class="item" data-item="{{item}}" bindtap="selectAddress">
+        <view>{{item.name}} {{item.phoneNumber}}</view>
+        <view>{{item.address}}</view>
+      </view>
+    </view>
+  </scroll-view>
+
 </view>
 
