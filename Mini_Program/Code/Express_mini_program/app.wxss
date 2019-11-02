@@ -1,6 +1,6 @@
 /**app.wxss**/
-@import "./fontawesome/fontawesome.wxss";
-@import "./fontawesome/solid.wxss";
+@import "./lib/fontawesome/fontawesome.wxss";
+@import "./lib/fontawesome/solid.wxss";
 
 .container {
   box-sizing: border-box;

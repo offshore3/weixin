@@ -30,7 +30,6 @@
       <text>地址簿</text>
     </view>
   </view>
-  
   <view class="submit">
     <label class="checkbox">
       <checkbox />我同意
