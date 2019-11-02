@@ -5,7 +5,7 @@ const app = getApp()
 Page({
   data: {
     senderInfo: { name: '刁佳', phoneNumber: "15902221234", address: "陕西省 西安市高新区"},
-    recipientInfo:{},
+    recipientInfo:{name:'张三',phoneNumber:'1212',address:'dfdfd'},
 
     hasSenderInfo: true,
     hasRecipientInfo: false
