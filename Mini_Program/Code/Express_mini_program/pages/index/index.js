@@ -19,13 +19,13 @@ Page({
 
   selectSenderInfo:function(){
     wx.navigateTo({
-      url: '../address/address-list?type=1',
+      url: '../address/list/address-list?type=1',
     })
   },
 
   selectRecipientInfo: function () {
     wx.navigateTo({
-      url: '../address/address-list?type=2',
+      url: '../address/list/address-list?type=2',
     })
   }
 })

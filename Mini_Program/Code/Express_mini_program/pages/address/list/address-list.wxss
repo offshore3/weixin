@@ -1,0 +1,45 @@
+/* pages/address/address-list.wxss */
+
+.content-list{
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 3px;
+  display:flex;
+}
+
+.item{
+  padding: 3px;
+  background-color: white;
+  width:100%;
+  font-size:30rpx;
+  height: 120rpx;
+}
+
+.flexbox{
+  height:35px;
+  width:100%;
+  display: flex;
+}
+
+.operate-bar{
+  z-index: 1001; 
+  position: absolute;
+  bottom: 0px;
+  height:45px;
+  width:100%;
+  display: flex;
+}
+
+.leftbutton{
+  width:30%;
+  background: orange;
+  height: 100%;
+  display: flex;
+}
+
+.rightbutton{
+  width:70%;
+  background: #05a5fb;
+  height: 100%;
+  display: flex;
+}

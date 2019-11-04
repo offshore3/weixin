@@ -1,0 +1,48 @@
+<!--pages/address/create/address-new.wxml-->
+<view class="container">
+  <view class="wholeline">
+    <view class="errorbar">{{errorMsg}}</view>
+  </view>
+  <form bindsubmit="formSubmit">
+    <view style='height:1200rpx;'>
+      <view class="flexbox">
+        <view class="left">
+          <input style="width:100%;margin:auto;" type="text" name="name" placeholder="收件人姓名" value="{{address.name}}"></input>
+        </view>
+        <view class="right" bindtap="selectAddress">
+          <view style="margin:auto;"><i class="fa fa-user-plus fa-2x" style="color:#05a5fb;"></i></view>
+        </view>
+      </view>
+
+      <view style="height:2px;"></view>
+
+      <view class="flexbox">
+        <view class="wholeline">
+          <input bindblur="validateTel" style="width:100%;margin:auto;" type="text" name="phoneNumber" placeholder="手机/固定电话" value="{{address.phoneNumber}}"></input>
+        </view>
+      </view>
+
+      <view style="height:2px;"></view>
+      
+      <view class="flexbox">
+        <view class="left">
+          <input style="width:100%;margin:auto;" type="text" name="address1" placeholder="点击选择省、市、区" value="{{address.addressmain}}"></input>
+        </view>
+        <view class="right">
+          <view style="margin:auto;"><i class="fa fa-map-marker fa-2x" style="color:#05a5fb;"></i></view>
+        </view>
+      </view>
+        
+      <view style="height:2px;"></view>
+      
+      <view class="flexbox">
+        <view class="wholeline">
+          <input style="width:100%;margin:auto;" type="text" name="address2" placeholder="请输入详细地址： 街道、路、小区、单元" value="{{address.addressdetail}}"></input>
+        </view>
+      </view>
+    </view>
+    <view class="operate-bar">
+      <button class="buttonbar" type="primary" form-type="submit">保存地址</button>
+    </view>
+  </form>
+</view>

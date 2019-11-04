@@ -6,7 +6,8 @@ Page({
    */
   data: {
     addresses:[],
-    addressType:0
+    addressType:0,
+    showOperation:false
   },
 
   /**
@@ -22,7 +23,7 @@ Page({
       title: '寄件人列表'
     });
 
-    var addressItems = [{ name: "test1", phoneNumber: "13679341268", address: "陕西省西安市" }, { name: "test2", phoneNumber: "13679341268", address: "陕西省西安市2" }];
+    var addressItems = wx.getStorageSync('addresses') || []
 
     that.setData({
       addresses: addressItems,
@@ -52,32 +53,39 @@ Page({
       delta: 1
     });
   },
-
-  /**
-   * Lifecycle function--Called when page is initially rendered
-   */
-  onReady: function () {
-
+  showOperateOptions: function () {
+    this.setData({
+      showOperation: !this.data.showOperation
+    });
+  },
+  createAddress: function () {
+    wx.navigateTo({
+      url: '../create/address-new'
+    })
   },
 
   /**
    * Lifecycle function--Called when page show
    */
   onShow: function () {
+    var addressItems = wx.getStorageSync('addresses') || []
 
+    this.setData({
+      addresses: addressItems,
+    });
   },
 
   /**
    * Lifecycle function--Called when page hide
    */
-  onHide: function () {
+  deleteAddress: function () {
 
   },
 
   /**
    * Lifecycle function--Called when page unload
    */
-  onUnload: function () {
+  editAddress: function () {
 
   },
 

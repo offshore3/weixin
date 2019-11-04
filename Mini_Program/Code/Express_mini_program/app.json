@@ -4,7 +4,8 @@
     "pages/logs/logs",
     "pages/query/query",
     "pages/my/my",
-    "pages/address/address-list"
+    "pages/address/list/address-list",
+    "pages/address/create/address-new"
   ],
   "window": {
     "backgroundTextStyle": "light",

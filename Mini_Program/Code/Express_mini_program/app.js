@@ -6,6 +6,9 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
+    var addressItems = [{ name: "test1", phoneNumber: "13679341268", address: "陕西省西安市" }, { name: "test2", phoneNumber: "13679341268", address: "陕西省西安市2" }];
+    wx.setStorageSync('addresses', addressItems)
+
     // 登录
     wx.login({
       success: res => {
@@ -35,5 +38,6 @@ App({
   },
   globalData: {
     userInfo: null
-  }
+  },
+
 })
