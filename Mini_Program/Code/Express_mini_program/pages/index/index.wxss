@@ -49,6 +49,7 @@
 .sender-address-manager {
   border-left-width: 2rpx;
   border-left-color: red;
+  padding-top: 32rpx;
 }
 
 .recipient {
@@ -69,5 +70,8 @@
 
 .term{
   color: #0099ff;
+}
+.goodsCategory van-button{
+  margin: 30rpx;
 }
 
