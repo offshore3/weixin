@@ -15,12 +15,18 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+    var title = '';
+    if(options.type == '1'){
+      title = '寄件人列表';
+    }else if(options.type == '2'){
+      title = '收件人列表';
+    }
 
     that.setData({
       addressType: options.type
     });
     wx.setNavigationBarTitle({
-      title: '寄件人列表'
+      title: title
     });
 
     var addressItems = wx.getStorageSync('addresses') || []

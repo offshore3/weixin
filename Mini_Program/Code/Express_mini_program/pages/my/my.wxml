@@ -3,14 +3,15 @@
   <view class="page-body">
     <view class="page-section" style="margin-bottom: 20px;">
       <image style="width: 50px; height: 50px; border-radius:30px;" src="{{src}}"></image>
-      <text>刘**</text>
-      <text>1589170****</text>
+      <div>
+        <text>刘**</text>
+        <text>1589170****</text>
+      </div>
       <i class="fa fa-address-card" style="float:right;line-height:50px;">已实名</i> 
     </view>
     <view class="page-section" style="padding-top: 10px;">      
       <text>我的订单</text>
-      <text style="float:right">查看全部</text>
-      &gt;
+      <text style="float:right">查看全部 ></text>      
       <view class="divLine"></view>
     </view>    
     <view class="page-section" style="margin-bottom: 20px;">      
@@ -21,16 +22,19 @@
       <button type="default" size="mini"> 已取消 </button>      
     </view>
     <view class="page-section" style="padding-top: 10px;">      
-      <view>
+      <view bindtap="gotoRecipientInfo">
         <text>收件人地址</text>
+        <text style="float:right">></text>   
       </view>      
       <view class="divLine"></view>
-      <view style="margin-top: 5px;">
+      <view style="margin-top: 5px;" bindtap="gotoSenderInfo">
         <text>我的地址</text>
+        <text style="float:right">></text>  
       </view>
       <view class="divLine"></view>
-      <view style="margin-top: 5px;">
+      <view style="margin-top: 5px;" bindtap="gotoMyDiscountCoupon">
         <text>我的优惠券</text>
+        <text style="float:right">></text>  
         <text class="fas fa-question"></text>  
       </view>
     </view>
