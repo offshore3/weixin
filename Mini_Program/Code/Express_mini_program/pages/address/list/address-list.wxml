@@ -6,16 +6,16 @@
 
   <scroll-view scroll-y="true" style='height:1200rpx;' bindscroll="scroll">
     <view class='content-list' wx:for="{{addresses}}" wx:key="unique" wx:for-index="indexs">
-      <view class="item" data-item="{{item}}">
-        <view bindtap="selectAddress">
+      <view class="item">
+        <view data-item="{{item}}" bindtap="selectAddress">
           <view>{{item.name}} {{item.phoneNumber}}</view>
           <view>{{item.address}}</view>
         </view>
 
         <view class="flexbox" wx:if="{{showOperation==true}}">
           <view style="width:70%;"></view>
-          <view style="width:15%;" bindtap="editAddress">编辑</view>
-          <view style="width:15%;" bindtap="deleteAddress">删除</view>
+          <view style="width:15%;">编辑</view>
+          <view style="width:15%;" data-item="{{item}}" bindtap="deleteAddress">删除</view>
         </view>
       </view>
     </view>

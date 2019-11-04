@@ -7,7 +7,8 @@ Page({
   data: {
     addresses:[],
     addressType:0,
-    showOperation:false
+    showOperation:false,
+    _options:{}
   },
 
   /**
@@ -23,7 +24,8 @@ Page({
     }
 
     that.setData({
-      addressType: options.type
+      addressType: options.type,
+      _options: options
     });
     wx.setNavigationBarTitle({
       title: title
@@ -84,15 +86,20 @@ Page({
   /**
    * Lifecycle function--Called when page hide
    */
-  deleteAddress: function () {
+  deleteAddress: function (e) {
+    var that = this;
+    var selectedItem = e.currentTarget.dataset.item;
+    var addressItems = wx.getStorageSync('addresses') || [];
 
-  },
+    addressItems.forEach(function (item, i) {
 
-  /**
-   * Lifecycle function--Called when page unload
-   */
-  editAddress: function () {
-
+      if (item.name == selectedItem.name && item.phoneNumber == selectedItem.phoneNumber) {
+        addressItems.splice(i, 1);
+      }
+    });
+    
+    wx.setStorageSync('addresses', addressItems);
+    that.onLoad(this.data._options);
   },
 
   /**

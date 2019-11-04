@@ -80,18 +80,22 @@ Page({
       this.setData({
         errorMsg: '请输入正确的收件人姓名'
       });
+      return;
     } else if (selectedItem.phoneNumber == '') {
       this.setData({
         errorMsg: '请输入正确的电话号码'
       });
+      return;
     } else if (selectedItem.address1 == '') {
       this.setData({
         errorMsg: '请输入正确的省、市、区'
       });
+      return;
     } else if (selectedItem.address2 == '') {
       this.setData({
         errorMsg: '请输入正确的详细地址'
       });
+      return;
     }
 
     var pages = getCurrentPages();
@@ -104,11 +108,7 @@ Page({
       addresses: items
     });
 
-    var addressItems = wx.getStorageSync('addresses') || []
-    var address = selectedItem.address1 + ' ' + selectedItem.address2;
-    selectedItem.address = address;
-    addressItems.push(selectedItem);
-    wx.setStorageSync('addresses', addressItems);
+    wx.setStorageSync('addresses', items);
 
     wx.navigateBack({
       delta: 1
