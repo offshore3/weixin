@@ -5,7 +5,8 @@ Page({
    * Page initial data
    */
   data: {
-
+     key:'',
+    active: 1
   },
 
   /**
@@ -15,6 +16,21 @@ Page({
     wx.setNavigationBarTitle({
       title: '查快递'
     })
+  },
+
+  onSearch:function(){
+
+  },
+
+  onCancel: function () {
+
+  },
+
+  onChange(event) {
+    wx.showToast({
+      title: `切换到标签 ${event.detail.name}`,
+      icon: 'none'
+    });
   },
 
   /**

@@ -1,5 +1,12 @@
 <!--pages/query/query.wxml-->
-<view>
-  <text>查快递</text>
+<view class="container">
+  <van-panel>
+    <van-search value="{{ key }}" placeholder="请输入运单号" show-action bind:search="onSearch" bind:cancel="onCancel" />
+  </van-panel>
+  <van-tabs animated active="{{ active }}" bind:change="onChange">
+  <van-tab title="全部(0)">all</van-tab>
+  <van-tab title="我查的(0)">mySearch</van-tab>
+  <van-tab title="我寄的(0)">mySent</van-tab>
+  <van-tab title="我收到(0)">myReceived</van-tab>
+</van-tabs>
 </view>
-
