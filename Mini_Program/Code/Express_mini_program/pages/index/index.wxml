@@ -1,35 +1,45 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="sender">
-    <view class="sender-img">
-      <text>寄</text>
+  <van-panel>
+    <view class="sender">
+      <view class="sender-img">
+        <text>寄</text>
+      </view>
+      <view class="sender-info" wx:if="{{hasSenderInfo}}">
+        <view>{{senderInfo.name}} {{senderInfo.phoneNumber}}</view>
+        <view>{{senderInfo.address}}</view>
+      </view>
+      <view class="default-sender-msg" bindtap="selectSenderAction" wx:else>
+        <navigator url="../address/address-list">
+          <view class="info">寄件人信息</view>
+          <view class="address">点击添加寄件地址</view>
+        </navigator>
+      </view>
+      <view class="sender-address-manager" bindtap="selectSenderInfo">
+        <text>地址簿</text>
+      </view>
     </view>
-    <view class="sender-info" wx:if="{{hasSenderInfo}}">
-      <view>{{senderInfo.name}} {{senderInfo.phoneNumber}}</view>
-      <view>{{senderInfo.address}}</view>
+  </van-panel>
+  <van-panel>
+    <view class="recipient">
+      <view class="recipient-img">
+        <text>收</text>
+      </view>
+      <view class="sender-info">
+        <view>{{recipientInfo.name}} {{recipientInfo.phoneNumber}}</view>
+        <view>{{recipientInfo.address}}</view>
+      </view>
+      <view class="sender-address-manager" bindtap="selectRecipientInfo">
+        <text>地址簿</text>
+      </view>
     </view>
-    <view class="default-sender-msg" bindtap="selectSenderAction" wx:else>
-      <navigator url="../address/address-list">
-        <view class="info">寄件人信息</view>
-        <view class="address">点击添加寄件地址</view>
-      </navigator>
-    </view>
-    <view class="sender-address-manager" bindtap="selectSenderInfo">
-      <text>地址簿</text>
-    </view>
-  </view>
-  <view class="recipient">
-    <view class="recipient-img">
-      <text>收</text>
-    </view>
-    <view class="sender-info">
-      <view>{{recipientInfo.name}} {{recipientInfo.phoneNumber}}</view>
-      <view>{{recipientInfo.address}}</view>
-    </view>
-    <view class="sender-address-manager" bindtap="selectRecipientInfo">
-      <text>地址簿</text>
-    </view>
-  </view>
+  </van-panel>
+  <van-panel>
+    <van-cell-group>
+      <van-field value="{{ goodsCategory }}" clearable label="物品类别:" icon="fa fa-angle-down" placeholder="衣帽鞋服" bind:click-icon="onSelectGoods" />
+      <van-field value="{{ commant }}" label="备注:" placeholder="请输入备注" />
+    </van-cell-group>
+  </van-panel>
   <view class="submit">
     <label class="checkbox">
       <checkbox />我同意
@@ -37,3 +47,15 @@
     <label class="term">{{'《'}}快递运单契约条款{{'》'}}</label>
   </view>
 </view>
+
+<van-action-sheet show="{{ showGoodsCategory }}" title="选择物品类别" bind:close="onClose" bind:select="onSelect">
+  <view class="goodsCategory">
+  <van-button type="default">衣帽鞋袜</van-button>
+  <van-button type="default">生活用品</van-button>
+  <van-button type="default">电子用品</van-button>
+  <van-button type="default">食物</van-button>
+  <van-button type="default">配件</van-button>
+  <van-button type="default">文件书刊</van-button>
+  <van-button type="default">其他</van-button>
+  </view>
+</van-action-sheet>

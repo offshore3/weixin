@@ -8,7 +8,10 @@ Page({
     recipientInfo:{name:'张三',phoneNumber:'1212',address:'dfdfd'},
 
     hasSenderInfo: true,
-    hasRecipientInfo: false
+    hasRecipientInfo: false,
+    showGoodsCategory:false,
+    goodsCategory:'',
+    commant:''
   },
 
   onLoad: function() {
@@ -27,5 +30,15 @@ Page({
     wx.navigateTo({
       url: '../address/list/address-list?type=2',
     })
+  },
+  onSelectGoods:function(){
+    this.setData({ showGoodsCategory:true});
+     
+  },
+  onClose:function(){
+    this.setData({ showGoodsCategory: false });
+  },
+  onSelect:function(event){
+    console.log(event.detail);
   }
 })

@@ -1,13 +1,21 @@
 <!--pages/my/my.wxml-->
-<view class="container">
+<view class="container" style="padding-top: 10px;" wx:if="{{!isGetUserInfo}}">    
+    <button wx:if="{{canIUse}}" type="primary" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+</view>
+<view class="container" wx:if="{{isGetUserInfo}}">
   <view class="page-body">
-    <view class="page-section" style="margin-bottom: 20px;">
-      <image style="width: 50px; height: 50px; border-radius:30px;" src="{{src}}"></image>
-      <div>
-        <text>刘**</text>
-        <text>1589170****</text>
+    <view class="page-section" style="margin-bottom: 20px;display: inline-block; width:100%">
+      <div style="width:20%;float:left">
+        <image style="width: 50px; height: 50px; border-radius:30px;" src="{{user.profilePhoto}}"></image>
+      </div>      
+      <div style="width:60%;float:left;padding-top: 6px;">
+        <text style="width:100%;display:inline-block">{{user.name}}</text>
+        <text style="width:100%;display:inline-block"><text class="fa fa-edit"></text>{{user.phone}}</text>
       </div>
-      <i class="fa fa-address-card" style="float:right;line-height:50px;">已实名</i> 
+      <div style="width:20%;float:left">
+        <i class="fa fa-address-card" style="float:right;line-height:50px;">已实名</i> 
+      </div>  
+      <div style="clear:both"></div>    
     </view>
     <view class="page-section" style="padding-top: 10px;">      
       <text>我的订单</text>
