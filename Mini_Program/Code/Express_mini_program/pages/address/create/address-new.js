@@ -109,10 +109,39 @@ Page({
     });
 
     wx.setStorageSync('addresses', items);
-
     wx.navigateBack({
       delta: 1
     });
+
+    // 保存到数据库
+    // var that = this;
+    // wx.request({
+    //   url: 'http://localhost:5000/api/shippingaddresses',
+    //   data: { name: selectedItem.name, tel: selectedItem.phoneNumber, address: selectedItem.address2, stateProvince: selectedItem.address1, city: selectedItem.address1 },
+    //   method: "POST",
+    //   header: {
+    //     'content-type': 'application/json'
+    //   },
+    //   success:function(res){
+    //     if(res.statusCode == 201){
+    //       that.setData({
+    //         errorMsg: '保存成功'
+    //       });
+    //       wx.navigateBack({
+    //         delta: 1
+    //       });
+    //     }else{
+    //       that.setData({
+    //         errorMsg: '保存失败'
+    //       });
+    //     }
+    //   },
+    //   fail: function (res) {
+    //     that.setData({
+    //       errorMsg: res.errMsg
+    //     });
+    //   }
+    // })
   },
 
   /**
