@@ -5,7 +5,8 @@
     "pages/query/query",
     "pages/my/my",
     "pages/address/list/address-list",
-    "pages/address/create/address-new"
+    "pages/address/create/address-new",
+    "pages/myDiscountCoupon/list"
   ],
   "window": {
     "backgroundTextStyle": "light",
