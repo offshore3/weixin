@@ -28,7 +28,7 @@
         <view class="left">
           <input style="width:100%;margin:auto;" type="text" name="address1" placeholder="点击选择省、市、区" value="{{address.addressmain}}"></input>
         </view>
-        <view class="right">
+        <view class="right" bindtap="selectLocation">
           <view style="margin:auto;"><i class="fa fa-map-marker fa-2x" style="color:#05a5fb;"></i></view>
         </view>
       </view>

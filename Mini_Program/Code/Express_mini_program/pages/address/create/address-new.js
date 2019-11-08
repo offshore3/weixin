@@ -1,4 +1,8 @@
 // pages/address/create/address-new.js
+
+var QQMapWX = require('../../../lib/qqmap-wx-jssdk1.2/qqmap-wx-jssdk.min.js');
+var qqmapsdk;
+
 Page({
 
   /**
@@ -13,15 +17,8 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
-  },
-
-  /**
-   * Lifecycle function--Called when page is initially rendered
-   */
-  validateTel: function (e) {
-    this.setData({
-      errorMsg: '请输入正确的电话号码'
+    qqmapsdk = new QQMapWX({
+      key: 'PTBBZ-4RICU-UATVH-2TMJL-JKMO7-IXFBW' //自己的key秘钥 http://lbs.qq.com/console/mykey.html 在这个网址申请
     });
   },
 
@@ -147,8 +144,43 @@ Page({
   /**
    * Lifecycle function--Called when page unload
    */
-  onUnload: function () {
+  selectLocation: function () {
+    var that = this;
+    wx.chooseLocation({
+      success: function (res) {
+        that.getLocationInfo(res.latitude, res.longitude, res.address + ' ' + res.name);
+      },
+      fail: function (e) {
+        console.log(e)
+      }
+    })
+  },
 
+  // 获取当前地理位置
+  getLocationInfo: function (latitude, longitude, address) {
+    let that = this;
+    qqmapsdk.reverseGeocoder({
+      location: {
+        latitude: latitude,
+        longitude: longitude
+      },
+      success: function (res) {
+        console.log("getLocal");
+        console.log(res);
+        let province = res.result.ad_info.province;
+        let city = res.result.ad_info.city;
+        let district = res.result.ad_info.district;
+        address = address.replace(province + city + district, '');
+
+        that.setData({
+          address: { addressmain: province + ' ' + city + ' ' + district, addressdetail: address }
+        });
+      },
+      fail: function (res) {
+        console.log("fail");
+        console.log(res);
+      }
+    });
   },
 
   /**
