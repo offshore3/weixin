@@ -20,6 +20,13 @@ Page({
     qqmapsdk = new QQMapWX({
       key: 'PTBBZ-4RICU-UATVH-2TMJL-JKMO7-IXFBW' //自己的key秘钥 http://lbs.qq.com/console/mykey.html 在这个网址申请
     });
+
+    var addressToDel = wx.getStorageSync('addressToDel');
+    if (addressToDel){
+      this.setData({
+        address: { name: addressToDel.name, phoneNumber: addressToDel.tel, addressmain: addressToDel.stateProvince + ' ' + addressToDel.city, addressdetail: addressToDel.address }
+      });
+    }
   },
 
   selectAddress() {
@@ -106,39 +113,43 @@ Page({
     });
 
     wx.setStorageSync('addresses', items);
-    wx.navigateBack({
-      delta: 1
-    });
+    // wx.navigateBack({
+    //   delta: 1
+    // });
 
+    this.saveDatatoDB(selectedItem);
+  },
+
+  saveDatatoDB: function (selectedItem) {
     // 保存到数据库
-    // var that = this;
-    // wx.request({
-    //   url: 'http://localhost:5000/api/shippingaddresses',
-    //   data: { name: selectedItem.name, tel: selectedItem.phoneNumber, address: selectedItem.address2, stateProvince: selectedItem.address1, city: selectedItem.address1 },
-    //   method: "POST",
-    //   header: {
-    //     'content-type': 'application/json'
-    //   },
-    //   success:function(res){
-    //     if(res.statusCode == 201){
-    //       that.setData({
-    //         errorMsg: '保存成功'
-    //       });
-    //       wx.navigateBack({
-    //         delta: 1
-    //       });
-    //     }else{
-    //       that.setData({
-    //         errorMsg: '保存失败'
-    //       });
-    //     }
-    //   },
-    //   fail: function (res) {
-    //     that.setData({
-    //       errorMsg: res.errMsg
-    //     });
-    //   }
-    // })
+    var that = this;
+    wx.request({
+      url: 'http://localhost:5000/api/shippingaddresses',
+      data: { name: selectedItem.name, tel: selectedItem.phoneNumber, address: selectedItem.address2, stateProvince: selectedItem.address1, city: selectedItem.address1 },
+      method: "POST",
+      header: {
+        'content-type': 'application/json'
+      },
+      success:function(res){
+        if(res.statusCode == 201){
+          that.setData({
+            errorMsg: '保存成功'
+          });
+          wx.navigateBack({
+            delta: 1
+          });
+        }else{
+          that.setData({
+            errorMsg: '保存失败'
+          });
+        }
+      },
+      fail: function (res) {
+        that.setData({
+          errorMsg: res.errMsg
+        });
+      }
+    })
   },
 
   /**
@@ -159,6 +170,7 @@ Page({
   // 获取当前地理位置
   getLocationInfo: function (latitude, longitude, address) {
     let that = this;
+    let currentAddress = that.data.address;
     qqmapsdk.reverseGeocoder({
       location: {
         latitude: latitude,
@@ -173,7 +185,7 @@ Page({
         address = address.replace(province + city + district, '');
 
         that.setData({
-          address: { addressmain: province + ' ' + city + ' ' + district, addressdetail: address }
+          address: { name: currentAddress.name, phoneNumber: currentAddress.phoneNumber, addressmain: province + ' ' + city + ' ' + district, addressdetail: address }
         });
       },
       fail: function (res) {

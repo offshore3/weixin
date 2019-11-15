@@ -5,6 +5,7 @@ Page({
    * Page initial data
    */
   data: {
+    errorMsg: '',
     addresses:[],
     addressType:0,
     showOperation:false,
@@ -31,11 +32,11 @@ Page({
       title: title
     });
 
-    var addressItems = wx.getStorageSync('addresses') || []
+    // var addressItems = wx.getStorageSync('addresses') || []
 
-    that.setData({
-      addresses: addressItems,
-    });
+    // that.setData({
+    //   addresses: addressItems,
+    // });
   },
 
   selectAddress: function (e) {
@@ -76,37 +77,47 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-    var addressItems = wx.getStorageSync('addresses') || []
+    // var addressItems = wx.getStorageSync('addresses') || []
 
-    this.setData({
-      addresses: addressItems,
-    });
+    // this.setData({
+    //   addresses: addressItems,
+    // });
+    this.loadData();
   },
 
   /**
    * Lifecycle function--Called when page hide
    */
   deleteAddress: function (e) {
-    var that = this;
     var selectedItem = e.currentTarget.dataset.item;
-    var addressItems = wx.getStorageSync('addresses') || [];
-
-    addressItems.forEach(function (item, i) {
-
-      if (item.name == selectedItem.name && item.phoneNumber == selectedItem.phoneNumber) {
-        addressItems.splice(i, 1);
+    var that = this;
+    wx.request({
+      url: 'http://localhost:5000/api/shippingaddresses/' + selectedItem.shippingAddressId,
+      method: "Delete",
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        that.loadData();
+      },
+      fail: function (res) {
+        that.setData({
+          errorMsg: res.errMsg
+        });
       }
-    });
-    
-    wx.setStorageSync('addresses', addressItems);
-    that.onLoad(this.data._options);
+    })
   },
 
   /**
    * Page event handler function--Called when user drop down
    */
-  onPullDownRefresh: function () {
+  editAddress: function (e) {
+    var selectedItem = e.currentTarget.dataset.item;
+    wx.setStorageSync('addressToDel', selectedItem);
 
+    wx.navigateTo({
+      url: '../create/address-new'
+    })
   },
 
   /**
@@ -116,10 +127,31 @@ Page({
 
   },
 
-  /**
-   * Called when user click on the top right corner to share
-   */
-  onShareAppMessage: function () {
-
+  loadData: function () {
+    //从数据库加载数据
+    var that = this;
+    wx.request({
+      url: 'http://localhost:5000/api/shippingaddresses',
+      method: "GET",
+      header: {
+        'content-type': 'application/json'
+      },
+      success:function(res){
+        if(res.statusCode == 200){
+          that.setData({
+            addresses: res.data
+          });
+        }else{
+          that.setData({
+            errorMsg: '数据加载失败'
+          });
+        }
+      },
+      fail: function (res) {
+        that.setData({
+          errorMsg: res.errMsg
+        });
+      }
+    })
   }
 })

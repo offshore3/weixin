@@ -8,6 +8,7 @@
       <view class="flexbox">
         <view class="left">
           <input style="width:100%;margin:auto;" type="text" name="name" placeholder="收件人姓名" value="{{address.name}}"></input>
+          <input type="hidden" name="shippingAddressId" value="{{address.shippingAddressId}}"></input>
         </view>
         <view class="right" bindtap="selectAddress">
           <view style="margin:auto;"><i class="fa fa-user-plus fa-2x" style="color:#05a5fb;"></i></view>
