@@ -1,0 +1,13 @@
+<!--pages/my/my.wxml-->
+<view class="container">
+  <view class="page-body">
+    <van-panel>
+        <van-cell-group>
+            <van-field value="{{ name }}" label="用户名:" placeholder="请输入用户名" />
+        </van-cell-group>
+    </van-panel>
+    <view class="page-section" style="padding-top: 20px;">      
+      <button type="primary" bindtap="gotoLogin">登录</button>
+    </view>    
+  </view>
+</view>
