@@ -1,15 +1,22 @@
 ﻿<Properties StartupConfiguration="{8A08ECF1-ABB7-41B1-A957-F5C24BA29719}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="miniapi/Startup.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="miniapi/Models/User.cs">
     <Files>
       <File FileName="miniapi/Startup.cs" Line="1" Column="1" />
+      <File FileName="miniapi/Models/User.cs" Line="26" Column="1" />
+      <File FileName="miniapi/Models/ShippingInfo.cs" Line="1" Column="1" />
+      <File FileName="miniapi/Models/ShippingAddress.cs" Line="1" Column="1" />
+      <File FileName="miniapi/Common/Enums.cs" Line="10" Column="26" />
+      <File FileName="miniapi/Models/MysqlDbContext.cs" Line="22" Column="34" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="miniapi" expanded="True">
             <Node name="miniapi" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Startup.cs" selected="True" />
+              <Node name="Common" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="User.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>

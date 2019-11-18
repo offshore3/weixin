@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+using miniapi.Common;
 
 namespace miniapi.Models
 {
@@ -16,5 +18,13 @@ namespace miniapi.Models
         public string Email { get; set; }
 
         public string Phone { get; set; }
+
+        public string Address1 { get; set; }
+
+        public string Address2 { get; set; }
+
+        public DateTime Created { get; set; }
+
+        public Role Role { get; set; }
     }
 }

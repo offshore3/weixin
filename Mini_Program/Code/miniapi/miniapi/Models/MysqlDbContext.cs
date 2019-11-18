@@ -19,5 +19,6 @@ namespace miniapi.Models
         public DbSet<ShippingAddress> ShippingAddresses { get; set; }
 
         public DbSet<ShippingInfo> ShippingInfos { get; set; }
+        public DbSet<Order> Orders { get; set; }
     }
 }
