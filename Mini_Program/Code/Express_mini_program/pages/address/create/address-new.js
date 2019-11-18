@@ -21,10 +21,10 @@ Page({
       key: 'PTBBZ-4RICU-UATVH-2TMJL-JKMO7-IXFBW' //自己的key秘钥 http://lbs.qq.com/console/mykey.html 在这个网址申请
     });
 
-    var addressToDel = wx.getStorageSync('addressToDel');
-    if (addressToDel){
+    var addressToEdit = wx.getStorageSync('addressToEdit');
+    if (addressToEdit){
       this.setData({
-        address: { name: addressToDel.name, phoneNumber: addressToDel.tel, addressmain: addressToDel.stateProvince + ' ' + addressToDel.city, addressdetail: addressToDel.address }
+        address: { shippingAddressId: addressToEdit.shippingAddressId, name: addressToEdit.name, phoneNumber: addressToEdit.tel, addressmain: addressToEdit.stateProvince, addressdetail: addressToEdit.address }
       });
     }
   },
@@ -117,7 +117,11 @@ Page({
     //   delta: 1
     // });
 
-    this.saveDatatoDB(selectedItem);
+    if(selectedItem.shippingAddressId){
+      this.updateDatatoDB(selectedItem);
+    }else{
+      this.saveDatatoDB(selectedItem);
+    }
   },
 
   saveDatatoDB: function (selectedItem) {
@@ -139,6 +143,38 @@ Page({
             delta: 1
           });
         }else{
+          that.setData({
+            errorMsg: '保存失败'
+          });
+        }
+      },
+      fail: function (res) {
+        that.setData({
+          errorMsg: res.errMsg
+        });
+      }
+    })
+  },
+
+  updateDatatoDB: function (selectedItem) {
+    // 保存到数据库
+    var that = this;
+    wx.request({
+      url: 'http://localhost:5000/api/shippingaddresses/' + selectedItem.shippingAddressId,
+      data: { shippingAddressId: selectedItem.shippingAddressId, name: selectedItem.name, tel: selectedItem.phoneNumber, address: selectedItem.address2, stateProvince: selectedItem.address1, city: selectedItem.address1 },
+      method: "PUT",
+      header: {
+        'content-type': 'application/json'
+      },
+      success: function (res) {
+        if (res.statusCode == 204) {
+          that.setData({
+            errorMsg: '保存成功'
+          });
+          wx.navigateBack({
+            delta: 1
+          });
+        } else {
           that.setData({
             errorMsg: '保存失败'
           });

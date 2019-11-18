@@ -113,7 +113,7 @@ Page({
    */
   editAddress: function (e) {
     var selectedItem = e.currentTarget.dataset.item;
-    wx.setStorageSync('addressToDel', selectedItem);
+    wx.setStorageSync('addressToEdit', selectedItem);
 
     wx.navigateTo({
       url: '../create/address-new'

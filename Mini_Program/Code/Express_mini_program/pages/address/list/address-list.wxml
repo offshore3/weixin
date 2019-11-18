@@ -9,7 +9,7 @@
       <view class="item">
         <view data-item="{{item}}" bindtap="selectAddress">
           <view>{{item.name}} {{item.tel}}</view>
-          <view>{{item.address}}</view>
+          <view>{{item.stateProvince}} {{item.address}}</view>
         </view>
 
         <view class="flexbox" wx:if="{{showOperation==true}}">
