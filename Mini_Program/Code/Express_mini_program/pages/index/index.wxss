@@ -2,25 +2,33 @@
 
 .sender {
   background-color: white;
-  height: 120rpx;
+  height: 200rpx;
   display: flex;
   padding-left: 10rpx;
 }
 
 .sender-img,.recipient-img {
   width: 10%;
-  margin-top:20rpx;
-  margin-left: 10rpx;
+  margin-top:60rpx;
+  margin-left: 15rpx;
 }
 
 .sender-img text{
   color:chocolate;
+  font-size: 18px
 }
 
 .recipient-img text{
   color: blue;
+  font-size: 18px
 }
-
+.info-area{
+  margin-top: 20rpx;
+  display: flex;
+  padding-top: 10rpx;
+  height: 150rpx;
+  flex-direction: column;
+}
 .default-sender-msg, .sender-info {
   display: flex;
   margin-left: 10rpx;
@@ -45,25 +53,33 @@
   justify-items: flex-start;
   width: 70%;
 }
-
-.sender-address-manager {
-  border-left-width: 2rpx;
-  border-left-color: red;
-  padding-top: 32rpx;
+.sender-name,.recipient-name{
+  font-size: 18px;
+  height: 60rpx;
+}
+.sender-address,.recipient-address{
+  font-size: 14px;
+  height: 60rpx;
 }
 
+.sender-address-manager {
+  padding-top: 60rpx;
+}
+.sender-address-manager text{
+  color:#0099ff;
+  padding-left: 10px;
+}
 .recipient {
   background-color: white;
-  height: 120rpx;
+  height: 200rpx;
   display: flex;
   padding-left: 10rpx;
   margin-top: 20rpx;
   padding-top: 10rpx;
 }
-
 .submit{
   position: fixed;
-  bottom: 0;
+  bottom: 5rpx;
   height: 80rpx;
   margin-left: 10rpx;
 }
@@ -74,4 +90,10 @@
 .goodsCategory van-button{
   margin: 30rpx;
 }
-
+.checkbox{
+  margin-right: 10rpx;
+  margin-left: 15rpx;
+}
+.btn-submit{
+  color: #0099ff;
+}

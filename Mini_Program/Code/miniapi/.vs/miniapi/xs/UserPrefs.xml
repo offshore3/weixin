@@ -1,0 +1,26 @@
+﻿<Properties StartupConfiguration="{8A08ECF1-ABB7-41B1-A957-F5C24BA29719}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="miniapi/Startup.cs">
+    <Files>
+      <File FileName="miniapi/Startup.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="miniapi" expanded="True">
+            <Node name="miniapi" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Startup.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.miniapi PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

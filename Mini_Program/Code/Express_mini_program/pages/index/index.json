@@ -5,6 +5,7 @@
     "van-col": "vant-weapp/col/index",
     "van-panel": "vant-weapp/panel",
     "van-field": "vant-weapp/field",
-    "van-action-sheet": "vant-weapp/action-sheet"
+    "van-action-sheet": "vant-weapp/action-sheet",
+    "van-checkbox": "vant-weapp/checkbox"
   }
 }
