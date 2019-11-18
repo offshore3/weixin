@@ -1,17 +1,12 @@
 <!--pages/my/my.wxml-->
-<view class="container" style="padding-top: 10px;" wx:if="{{!isGetUserInfo}}">    
-    <button wx:if="{{canIUse}}" type="primary" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
-</view>
-<view class="container" wx:if="{{isGetUserInfo}}">
+<view class="container">
   <view class="page-body">
     <view class="page-section" style="margin-bottom: 20px;display: inline-block; width:100%">
       <div style="width:20%;float:left">
-        <image style="width: 50px; height: 50px; border-radius:30px;" src="{{user.profilePhoto}}"></image>
+        <image style="width: 50px; height: 50px; border-radius:30px;" src="{{profilePhoto}}"></image>
       </div>      
-      <div style="width:60%;float:left;padding-top: 6px;">
-        <text style="width:100%;display:inline-block">{{user.name}}</text>
-        <text style="width:100%;display:inline-block"><text class="fa fa-edit"></text>{{user.phone}}</text>
-        <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号</button>
+      <div style="width:60%;float:left;">
+        <text style="width:100%;line-height:50px;">{{name}}</text>
       </div>
       <div style="width:20%;float:left">
         <i class="fa fa-address-card" style="float:right;line-height:50px;">已实名</i> 
@@ -47,5 +42,8 @@
         <text class="fas fa-question"></text>  
       </view>
     </view>
+    <view class="page-section" style="padding-top: 20px;">      
+      <button type="primary" bindtap="gotoLogout">退出</button>
+    </view>    
   </view>
 </view>

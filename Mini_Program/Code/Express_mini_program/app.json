@@ -6,7 +6,8 @@
     "pages/my/my",
     "pages/address/list/address-list",
     "pages/address/create/address-new",
-    "pages/myDiscountCoupon/list"
+    "pages/login/user-login/login",
+    "pages/login/user-regist/registToLogin"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -33,7 +34,7 @@
         "text": "查快递"
       },
       {
-        "pagePath": "pages/my/my",
+        "pagePath": "pages/login/user-login/login",
         "iconPath": "static/images/ic_menu_me_nor.png",
         "selectedIconPath": "static/images/ic_menu_me_pressed.png",
         "text": "我的"
