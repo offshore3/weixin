@@ -22,6 +22,19 @@ namespace miniapi.Controllers
             return _context.Users;
         }
 
+        // GET api/Users?login=
+        [HttpGet]
+        public async Task<IActionResult> Get(string login)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(x => x.Login == login);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(user);
+        }
+
         // GET api/Users/1
         [HttpGet("{id}")]
         public async Task<IActionResult> Get([FromRoute]int id)
