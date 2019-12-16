@@ -2,4 +2,4 @@
 <view class="container" style="padding-top: 10px;">    
     <button disabled="{{!canIUse}}" type="primary" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
 </view>
-<button type="default" bindtap="gotoLogin" >用户名登录</button>
+<button style="margin-top:10px;" type="default" bindtap="gotoLogin" >用户名登录</button>

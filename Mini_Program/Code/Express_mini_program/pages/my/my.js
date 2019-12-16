@@ -16,26 +16,24 @@ Page({
   onLoad: function (options) {
     var that = this;
 
-    console.log(options)
-
     wx.setNavigationBarTitle({
       title: '我的'
     });
 
-    var userData = ex.getStorageSync('userData')
-    console.log(userData)
+    var userData = wx.getStorageSync('userData')
     if(userData){
-      console.log('111')
       var profilePhoto = userData.profilePhoto == '' 
-      ? this.data.src
-      : userData.profilePhoto
+        ? this.data.src
+        : userData.profilePhoto
       
       that.setData({
         profilePhoto:userData.profilePhoto,
         name:userData.name
       })
     }else{
-      console.log('222')
+      wx.navigateTo({
+        url: '../login/user-login/login',
+      })
     }
   },
 
@@ -59,9 +57,9 @@ Page({
 
   gotoLogout:function(){
     wx.clearStorageSync();
-    
-    wx.navigateTo({
-      url: '../login/user-login/login',
-    })
+        
+    wx.switchTab({
+      url:'../index/index'
+    });
   }  
 })

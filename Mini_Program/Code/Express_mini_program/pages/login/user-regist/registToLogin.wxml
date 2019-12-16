@@ -1,13 +1,19 @@
 <!--pages/my/my.wxml-->
 <view class="container">
+  <view class="wholeline">
+    <view class="errorbar">{{errorMsg}}</view>
+  </view>
   <view class="page-body">
-    <van-panel>
-        <van-cell-group>
-            <van-field value="{{ name }}" label="用户名:" placeholder="请输入用户名" />
-        </van-cell-group>
-    </van-panel>
-    <view class="page-section" style="padding-top: 20px;">      
-      <button type="primary" bindtap="gotoLogin">登录</button>
-    </view>    
+    <form bindsubmit="loginApp">
+      <van-panel>
+          <van-cell-group>
+              <van-field label="用户名:" placeholder="请输入用户名" name="login" value="{{login}}" />
+              <van-field label="密码:" placeholder="请输入密码" name="password" value="{{password}}" />              
+          </van-cell-group>          
+      </van-panel>
+      <view class="page-section" style="padding-top: 20px;">      
+        <button class="buttonbar" type="primary" form-type="submit">登录</button>
+      </view>  
+    </form>  
   </view>
 </view>

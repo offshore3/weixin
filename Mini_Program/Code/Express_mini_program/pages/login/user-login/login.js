@@ -19,10 +19,7 @@ Page({
   
       var userData = wx.getStorageSync('userData') || [];
       if(userData){
-        console.log('111') 
         console.log(userData) 
-      }else{
-
       }
     },
 
