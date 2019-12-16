@@ -13,32 +13,30 @@ Page({
      * Lifecycle function--Called when page load
      */
     onLoad: function (options) {
-      var that = this;
-  
       wx.setNavigationBarTitle({
         title: '我的'
       });
   
-    //   wx.getSetting({
-    //     success: function(res){
-    //       if (res.authSetting['scope.userInfo']) {
-    //         // 已经授权，可以直接调用 getUserInfo 获取头像昵称          
-    //         wx.getUserInfo({
-    //           success: function(res) {
-    //             wx.navigateTo({
-    //                 url: '../../my/my?name='+ res.userInfo.nickName+'&profilePhoto='+res.userInfo.avatarUrl,
-    //             });                
-    //           }
-    //         })
-    //       }
-    //     }
-    //   })
+      var userData = wx.getStorageSync('userData') || [];
+      if(userData){
+        console.log('111') 
+        console.log(userData) 
+      }else{
+
+      }
     },
 
     bindGetUserInfo: function (e) {
         if(e.detail.errMsg == 'getUserInfo:ok'){
+          var userData = {
+            name:e.detail.userInfo.nickName,
+            profilePhoto:e.detail.userInfo.avatarUrl
+          }
+
+          wx.setStorageSync('userData', userData);
+
           wx.navigateTo({
-            url: '../../my/my?name='+ e.detail.userInfo.nickName+'&profilePhoto='+e.detail.userInfo.avatarUrl,
+            url: '../../my/my',
           });
         }
     },

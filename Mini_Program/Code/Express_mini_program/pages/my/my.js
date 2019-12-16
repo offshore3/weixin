@@ -22,15 +22,21 @@ Page({
       title: '我的'
     });
 
-    var photo = this.data.src;
-    if(options.profilePhoto){
-      photo = options.profilePhoto
+    var userData = ex.getStorageSync('userData')
+    console.log(userData)
+    if(userData){
+      console.log('111')
+      var profilePhoto = userData.profilePhoto == '' 
+      ? this.data.src
+      : userData.profilePhoto
+      
+      that.setData({
+        profilePhoto:userData.profilePhoto,
+        name:userData.name
+      })
+    }else{
+      console.log('222')
     }
-
-    that.setData({
-      profilePhoto:photo,
-      name:options.name
-    })
   },
 
   gotoSenderInfo:function(){
@@ -52,8 +58,10 @@ Page({
   },
 
   gotoLogout:function(){
+    wx.clearStorageSync();
+    
     wx.navigateTo({
-      url: '../login/user-regist/registToLogin',
+      url: '../login/user-login/login',
     })
-  }
+  }  
 })
