@@ -22,11 +22,11 @@ namespace miniapi.Controllers
             return _context.Users;
         }
 
-        // GET api/Users?login=
-        [HttpGet]
-        public async Task<IActionResult> Get(string login)
+        // Get api/Users/GetUserByLogin
+        [HttpGet("GetUserByLogin")]
+        public async Task<IActionResult> GetUserByLogin(string login, string password)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(x => x.Login == login);
+            var user = await _context.Users.FirstOrDefaultAsync(x => x.Login == login && x.Password == password);
             if (user == null)
             {
                 return NotFound();

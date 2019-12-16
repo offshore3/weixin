@@ -19,12 +19,12 @@ namespace miniapi.Models
 
         public string Phone { get; set; }
 
-        public string Address1 { get; set; }
+        //public string Address1 { get; set; }
 
-        public string Address2 { get; set; }
+        //public string Address2 { get; set; }
 
-        public DateTime Created { get; set; }
+        //public DateTime Created { get; set; }
 
-        public Role Role { get; set; }
+        //public Role Role { get; set; }
     }
 }
